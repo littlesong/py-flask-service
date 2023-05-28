@@ -2,6 +2,8 @@ import os
 
 from flask import Flask
 
+from .endpoints.info import get_info
+
 
 def create_app(test_config=None):
     """Create and configure an instance of the Flask application."""
@@ -26,20 +28,9 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    @app.route("/hello")
-    def hello():
-        return "Hello, World!"
-
-    # register the database commands
-    from flaskr import db
-
-    db.init_app(app)
-
-    # apply the blueprints to the app
-    from flaskr import auth, blog
-
-    app.register_blueprint(auth.bp)
-    app.register_blueprint(blog.bp)
+    @app.route("/info")
+    def info():
+        return get_info()
 
     # make url_for('index') == url_for('blog.index')
     # in another app, you might define a separate main index here with

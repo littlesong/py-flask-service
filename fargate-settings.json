@@ -1,0 +1,17 @@
+{
+    "project": "py-flask-service",
+    "stage": "prod",
+    "github": {
+        "owner": "littlesong",
+        "repo": "py-flask-service",
+        "branch": "main"
+    },
+    "fargate": {
+        "domain": "mygreenaward.com",
+        "subDomain": "dwang",
+        "certificateId": "8e520ece-1d3e-480e-8a07-59744b951dcd",
+        "healthCheckPath": "/info",
+        "containerPort": 8000,
+        "vpcId": "vpc-07f8b08a4da7387ec"
+    }
+}

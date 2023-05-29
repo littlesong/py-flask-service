@@ -26,3 +26,9 @@
 
     - Inspect exposed port(s):  docker image inspect flaskapi1 -f '{{ .ContainerConfig.ExposedPorts }}'
 
+# DEPLOYMENT
+
+## Deploy the docker stack
+
+    Run `./devops/deploy-ecr-stack.sh` in the project root directory.
+    
